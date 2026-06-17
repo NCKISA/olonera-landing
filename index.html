@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OLONERA — Your body is changing. Build it stronger.</title>
+<meta name="description" content="OLONERA matches women in perimenopause and menopause with functional specialists, science-backed supplements, and a curated knowledge library. California — join the waitlist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF7; --white:#FFFFFF;
+  --mist:#F4F1EB; --cloud:#F0E9DD; --sand:#E8DECF; --plum:#3A1F2A;
+  --ink:#1B1816; --graphite:#2F2A26;
+  --secondary:#6B6560; --tertiary:#9A938C;
+  --line:rgba(27,24,22,0.10); --line-soft:rgba(27,24,22,0.06);
+  --accent:#C28575; --accent-deep:#A26155; --accent-soft:#E8B4A8; --accent-tint:#F2D7CD;
+  --green:#3D7A5C; --green-tint:#E4EFE9;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --font-serif:'Instrument Serif',Georgia,serif;
+  --r-sm:14px; --r-md:22px; --r-lg:28px; --r-xl:36px; --r-pill:999px;
+  --shadow-xs:0 1px 2px rgba(27,24,22,0.04);
+  --shadow-sm:0 4px 14px rgba(27,24,22,0.05);
+  --shadow-md:0 14px 36px rgba(27,24,22,0.08);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t:200ms;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);overflow-x:hidden;letter-spacing:-0.01em}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:transparent;color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+/* grain */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.016;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* layout */
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.wrap-narrow{max-width:800px;margin:0 auto;padding:0 28px}
+.section{padding:100px 0}
+.section-sm{padding:64px 0}
+@media(max-width:720px){.section{padding:64px 0}.section-sm{padding:40px 0}.wrap,.wrap-narrow{padding:0 20px}}
+
+/* type */
+.eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.h1{font-family:var(--font-sans);font-weight:600;font-size:clamp(48px,7.5vw,104px);line-height:.97;letter-spacing:-.044em;color:var(--ink)}
+.h1 em{font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--accent);letter-spacing:-.02em}
+.h2{font-family:var(--font-sans);font-weight:600;font-size:clamp(28px,3.5vw,48px);line-height:1.06;letter-spacing:-.03em;color:var(--ink)}
+.h2 em{font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--accent);letter-spacing:-.02em}
+.h3{font-weight:600;font-size:20px;line-height:1.2;letter-spacing:-.018em;color:var(--ink)}
+.lede{font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--secondary);font-weight:400;letter-spacing:-.012em}
+.body{font-size:15px;line-height:1.65;color:var(--secondary)}
+.small{font-size:13px;color:var(--tertiary);line-height:1.5}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:14px 26px;border-radius:var(--r-pill);font-size:14px;font-weight:500;letter-spacing:-.005em;transition:all var(--t) var(--ease);white-space:nowrap;cursor:pointer}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:var(--accent);transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(194,133,117,.25)}
+.btn-accent:hover{background:var(--ink);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid rgba(27,24,22,.18)}
+.btn-outline:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-lg{padding:16px 32px;font-size:15px}
+.btn-sm{padding:9px 18px;font-size:13px}
+
+/* tag */
+.tag{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:var(--r-pill);font-size:11px;font-weight:500;background:var(--mist);color:var(--graphite);border:1px solid var(--line-soft)}
+.tag-accent{background:var(--accent-tint);color:var(--accent-deep);border-color:transparent}
+.tag-green{background:var(--green-tint);color:var(--green);border-color:transparent}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:90;background:rgba(251,250,247,.82);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.wordmark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.wordmark-text{font-weight:700;font-size:22px;letter-spacing:-.025em;color:#1E3A5C;line-height:1}
+.wordmark-dot{display:none}/* replaced by SVG mark */
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-link{font-size:13px;color:var(--secondary);transition:color var(--t)}
+.nav-link:hover{color:var(--accent)}
+@media(max-width:640px){.nav-link{display:none}}
+
+/* ── HERO ── */
+.hero{padding:96px 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:1100px;height:800px;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(232,180,168,.26),transparent 60%),radial-gradient(ellipse 50% 40% at 68% 65%,rgba(242,215,205,.18),transparent 65%);z-index:0;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 28px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:var(--r-pill);background:rgba(255,255,255,.7);border:1px solid var(--line-soft);margin-bottom:36px;font-size:12.5px;font-weight:500;color:var(--graphite);backdrop-filter:blur(8px)}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.8)}}
+.hero h1{margin-bottom:28px}
+.hero .lede{max-width:660px;margin:0 auto 44px}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.hero-note{font-size:12px;color:var(--tertiary);text-align:center}
+
+/* ── MARQUEE ── */
+.marquee{background:var(--cloud);padding:17px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marquee-track{display:flex;gap:0;animation:scroll 46s linear infinite;white-space:nowrap;font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:var(--graphite)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.m-item{padding-right:56px;display:inline-flex;align-items:center;gap:56px}
+.m-sep{color:var(--accent);font-family:var(--font-serif);font-style:italic;font-size:17px;line-height:1}
+
+/* ── WHO WE ARE ── */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.who-visual{background:var(--mist);border-radius:var(--r-xl);padding:40px 36px}
+.who-step{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.who-step:first-child{padding-top:0}
+.who-step:last-child{border-bottom:0;padding-bottom:0}
+.step-n{width:32px;height:32px;border-radius:var(--r-pill);background:var(--ink);color:#fff;font-weight:600;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.step-body h4{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:4px;letter-spacing:-.012em}
+.step-body p{font-size:13.5px;color:var(--secondary);line-height:1.5}
+@media(max-width:860px){.who-grid{grid-template-columns:1fr}}
+
+/* ── PILLARS ── */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.pillar{background:var(--mist);border-radius:var(--r-lg);padding:30px 26px;transition:transform .25s var(--ease)}
+.pillar:hover{transform:translateY(-3px)}
+.pillar.p-dark{background:var(--ink)}
+.pillar.p-dark .p-num{color:var(--accent-soft)}
+.pillar.p-dark .h3{color:#fff}
+.pillar.p-dark .body{color:rgba(255,255,255,.6)}
+.p-num{font-size:10.5px;font-weight:600;letter-spacing:.06em;color:var(--accent);margin-bottom:16px;font-family:var(--font-sans)}
+@media(max-width:1000px){.pillars{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.pillars{grid-template-columns:1fr}}
+
+/* ── LIBRARY ── */
+.lib-section{background:var(--mist)}
+.lib-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px;flex-wrap:wrap}
+.lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.lib-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.lib-grid{grid-template-columns:1fr}}
+
+.article-card{background:var(--white);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-soft);box-shadow:var(--shadow-xs);transition:all .25s var(--ease);display:flex;flex-direction:column}
+.article-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+
+.article-thumb{height:160px;position:relative;flex-shrink:0}
+.thumb-a{background:linear-gradient(135deg,#3A1F2A,#7A3F54)}
+.thumb-b{background:linear-gradient(135deg,var(--cloud),var(--sand))}
+.thumb-c{background:linear-gradient(135deg,var(--accent-tint),var(--accent-soft))}
+.thumb-d{background:linear-gradient(135deg,#2A3A2A,#4A6A4A)}
+.thumb-e{background:linear-gradient(135deg,#1E3A4A,#3A6A8A)}
+.thumb-f{background:linear-gradient(135deg,#3A2A1A,#6A4A2A)}
+.thumb-g{background:linear-gradient(135deg,#2A1A3A,#5A3A6A)}
+.thumb-label{position:absolute;bottom:12px;left:14px}
+
+.article-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.article-meta{font-size:11px;color:var(--tertiary);margin-bottom:8px;letter-spacing:.02em;text-transform:uppercase}
+.article-title{font-weight:600;font-size:16px;color:var(--ink);line-height:1.3;letter-spacing:-.015em;margin-bottom:10px}
+.article-excerpt{font-size:13.5px;color:var(--secondary);line-height:1.55;margin-bottom:16px;flex:1}
+.article-read-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent-deep);transition:gap var(--t) var(--ease)}
+.article-read-btn:hover{gap:9px}
+
+/* expandable short read */
+.short-read{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--line-soft)}
+.short-read.open{display:block}
+.short-read-inner{font-size:14px;line-height:1.7;color:var(--graphite)}
+.short-read-inner p{margin-bottom:12px}
+.short-read-inner p:last-child{margin-bottom:0}
+.short-read-inner ul{padding-left:18px;margin-bottom:12px}
+.short-read-inner li{margin-bottom:6px;font-size:13.5px;line-height:1.55;color:var(--secondary)}
+.short-read-inner strong{color:var(--ink);font-weight:600}
+.sr-disclaimer{font-size:11.5px;color:var(--tertiary);margin-top:14px;padding:10px 14px;background:var(--mist);border-radius:var(--r-sm);line-height:1.5}
+.read-toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent-deep);cursor:pointer;margin-bottom:0;transition:opacity var(--t)}
+.read-toggle:hover{opacity:.75}
+.read-toggle .arrow{transition:transform var(--t) var(--ease);display:inline-block}
+.read-toggle.open .arrow{transform:rotate(180deg)}
+
+/* Instagram link */
+.article-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft);gap:12px;flex-wrap:wrap}
+.ig-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--tertiary);transition:color var(--t) var(--ease);white-space:nowrap}
+.ig-link:hover{color:#C13584}
+.ig-link svg{flex-shrink:0}
+
+/* ── MARKETPLACE ── */
+.shelf-section{background:var(--paper)}
+.shelf-trust-bar{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;margin-bottom:48px}
+.shelf-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--secondary)}
+.shelf-trust-item svg{color:var(--accent);flex-shrink:0}
+
+.shelf-filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.filter-btn{padding:9px 16px;border-radius:var(--r-pill);font-size:12.5px;font-weight:500;background:var(--mist);color:var(--graphite);border:1px solid var(--line-soft);cursor:pointer;transition:all var(--t) var(--ease)}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent-deep)}
+.filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.shelf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:960px){.shelf-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.shelf-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:440px){.shelf-grid{grid-template-columns:1fr}}
+
+.prod-card{background:var(--white);border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-xs);transition:all .25s var(--ease);display:flex;flex-direction:column}
+.prod-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:var(--line)}
+.prod-img{aspect-ratio:1;background:linear-gradient(160deg,var(--cloud),var(--mist));display:flex;align-items:center;justify-content:center;font-size:44px;position:relative;border-bottom:1px solid var(--line-soft)}
+.prod-badge{position:absolute;top:10px;left:10px}
+.prod-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.prod-brand{font-size:10.5px;color:var(--tertiary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.prod-name{font-weight:600;font-size:15px;color:var(--ink);line-height:1.25;letter-spacing:-.013em;margin-bottom:6px}
+.prod-why{font-size:12.5px;color:var(--secondary);line-height:1.5;margin-bottom:12px;flex:1}
+.prod-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.prod-footer{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line-soft)}
+.prod-price{font-weight:600;font-size:17px;color:var(--ink);letter-spacing:-.02em}
+.prod-sub{font-size:11px;color:var(--green);font-weight:500}
+
+.shelf-bottom-note{margin-top:36px;text-align:center}
+.curated-seal{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:var(--r-pill);background:var(--mist);border:1px solid var(--line-soft);font-size:13px;color:var(--secondary)}
+.curated-seal strong{color:var(--ink)}
+
+/* ── WAITLIST ── */
+.waitlist-section{background:linear-gradient(160deg,var(--plum) 0%,#1A0E14 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+.waitlist-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 30%,rgba(232,180,168,.15),transparent 60%);pointer-events:none}
+.waitlist-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:0 28px}
+.waitlist-section .h2{color:#fff;margin-bottom:16px}
+.waitlist-section .h2 em{color:var(--accent-soft)}
+.waitlist-section .lede{color:rgba(244,230,221,.70);margin-bottom:40px}
+.waitlist-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.waitlist-note{font-size:12px;color:rgba(255,255,255,.32);text-align:center}
+
+/* ── SPECIALIST CTA ── */
+.specialist-cta-section{background:var(--mist);text-align:center}
+.specialist-cta-inner{max-width:680px;margin:0 auto;padding:0 28px}
+.spec-types-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px 0 32px}
+.spec-type-tag{padding:8px 16px;border-radius:var(--r-pill);background:var(--white);border:1px solid var(--line-soft);font-size:13px;color:var(--graphite);font-weight:500}
+.waitlist-note{font-size:12px;color:rgba(255,255,255,.32);text-align:center}
+.waitlist-scarcity{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:var(--r-pill);background:rgba(232,180,168,.12);border:1px solid rgba(232,180,168,.22);font-size:12.5px;font-weight:500;color:var(--accent-soft);margin-bottom:32px}
+
+/* ── FOOTER ── */
+.footer{background:var(--mist);border-top:1px solid var(--line);padding:48px 0 32px}
+.footer-inner{max-width:1160px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+.footer-brand .wordmark{margin-bottom:10px}
+.footer-brand p{font-size:12.5px;color:var(--secondary);max-width:300px;line-height:1.6}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--secondary)}
+.footer-links a:hover{color:var(--ink)}
+.footer-bottom{max-width:1160px;margin:24px auto 0;padding:24px 28px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--tertiary)}
+.footer-disclaimer{max-width:1160px;margin:0 auto;padding:0 28px;font-size:11.5px;color:var(--secondary);line-height:1.7;margin-top:20px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="wordmark" aria-label="OLONERA — home">
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg_nav" x1="15%" y1="85%" x2="75%" y2="5%">
+            <stop offset="0%" stop-color="#5B9B8A"/>
+            <stop offset="100%" stop-color="#C2796A"/>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="30" fill="none" stroke="url(#lg_nav)"
+          stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="148 42" transform="rotate(140 50 50)"/>
+        <circle cx="50" cy="50" r="8.5" fill="#C2796A"/>
+      </svg>
+      <span class="wordmark-text">olonera</span>
+    </a>
+    <div class="nav-right">
+      <a href="#how" class="nav-link">How it works</a>
+      <a href="#library" class="nav-link">Library</a>
+      <a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-sm">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      California · Closed beta opening
+    </div>
+
+    <h1 class="h1">
+      Your body is changing.<br>
+      Build it <em>stronger.</em>
+    </h1>
+
+    <p class="lede">
+      OLONERA matches women in perimenopause and menopause with functional specialists, a curated supplement shelf, and a knowledge library built for this decade. Start where you are.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Join the waitlist →</a>
+      <a href="#library" class="btn btn-outline btn-lg">Read the library</a>
+    </div>
+    <p class="hero-note">Free to start · No credit card · No commitment</p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="m-item">
+      Functional specialist matching<span class="m-sep">·</span>
+      Science-backed supplements<span class="m-sep">·</span>
+      Clinician-written knowledge library<span class="m-sep">·</span>
+      Perimenopause &amp; menopause focused<span class="m-sep">·</span>
+      Lab interpretation from existing tests<span class="m-sep">·</span>
+      Built for women's health &amp; longevity<span class="m-sep">·</span>
+      California · Closed beta<span class="m-sep">·</span>
+    </span>
+    <span class="m-item" aria-hidden="true">
+      Functional specialist matching<span class="m-sep">·</span>
+      Science-backed supplements<span class="m-sep">·</span>
+      Clinician-written knowledge library<span class="m-sep">·</span>
+      Perimenopause &amp; menopause focused<span class="m-sep">·</span>
+      Lab interpretation from existing tests<span class="m-sep">·</span>
+      Built for women's health &amp; longevity<span class="m-sep">·</span>
+      California · Closed beta<span class="m-sep">·</span>
+    </span>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="who-grid">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:16px">Who we are</span>
+        <h2 class="h2" style="margin-bottom:20px">The platform conventional medicine never built for this decade.</h2>
+        <p class="lede" style="margin-bottom:20px">
+          OLONERA coordinates the specialists, supplements, and knowledge that matter most for women in perimenopause and menopause — in one place, built around your body and your goals.
+        </p>
+        <p class="body" style="margin-bottom:32px">
+          We are not a telehealth clinic. We are not a supplement store. We are the coordination layer between you and the functional specialists — nutritionists, naturopaths, health coaches, fitness and mental health experts — who have the time, the training, and the longevity framework your GP doesn't.
+        </p>
+        <a href="#waitlist" class="btn btn-dark">Join the waitlist →</a>
+      </div>
+
+      <div class="who-visual">
+        <p class="eyebrow" style="margin-bottom:20px">How it works</p>
+        <div class="who-step">
+          <div class="step-n">01</div>
+          <div class="step-body">
+            <h4>Tell us where you are</h4>
+            <p>A 4-minute intake — your symptoms, stage, goals, and any prior tests you already have. No commitment required.</p>
+          </div>
+        </div>
+        <div class="who-step">
+          <div class="step-n">02</div>
+          <div class="step-body">
+            <h4>Meet your matched specialist</h4>
+            <p>A hand-picked functional expert — nutritionist, naturopath, health coach, or fitness specialist — matched to your exact presentation. They review labs you already have, or help you know which ones to get.</p>
+          </div>
+        </div>
+        <div class="who-step">
+          <div class="step-n">03</div>
+          <div class="step-body">
+            <h4>Get your curated supplement stack</h4>
+            <p>Your specialist builds your personal stack from science-backed supplements chosen by our medical board — not a generic protocol.</p>
+          </div>
+        </div>
+        <div class="who-step">
+          <div class="step-n">04</div>
+          <div class="step-body">
+            <h4>Learn as you go</h4>
+            <p>Clinician-written guides and research reviews, curated for this life stage. The knowledge library is free for everyone — starting now.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 pillars -->
+    <div class="pillars">
+      <div class="pillar p-dark">
+        <div class="p-num">STEP 01</div>
+        <h3 class="h3" style="color:#fff;margin-bottom:10px">Your intake assessment</h3>
+        <p class="body">4 minutes. Symptoms, stage, goals. The foundation everything else is built on.</p>
+      </div>
+      <div class="pillar">
+        <div class="p-num">STEP 02</div>
+        <h3 class="h3" style="margin-bottom:10px">Your matched specialist</h3>
+        <p class="body">Nutritionist, naturopath, health coach, mental health or fitness expert — chosen for your exact needs.</p>
+      </div>
+      <div class="pillar">
+        <div class="p-num">STEP 03</div>
+        <h3 class="h3" style="margin-bottom:10px">Your curated supplement stack</h3>
+        <p class="body">Browse our curated shelf of science-backed supplements. After your consultation, your specialist will review your stack and suggest additional supplements and tools tailored to what your body actually needs.</p>
+      </div>
+      <div class="pillar">
+        <div class="p-num">STEP 04</div>
+        <h3 class="h3" style="margin-bottom:10px">The knowledge library</h3>
+        <p class="body">Clinician-written, evidence-cited. Free to read now — no sign-up required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIBRARY -->
+<section class="section lib-section" id="library">
+  <div class="wrap">
+    <div class="lib-intro">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:14px">The OLONERA library</span>
+        <h2 class="h2">Knowledge for women who want to <em>understand</em>, not just follow.</h2>
+        <p class="lede" style="margin-top:14px;max-width:580px">Clinician-written. Evidence-cited. Vetted by our medical board. Read the short version here — or dive into the full guide. Free, always.</p>
+      </div>
+    </div>
+
+    <div class="lib-grid">
+
+      <!-- A002 -->
+      <div class="article-card">
+        <div class="article-thumb thumb-b">
+          <span class="tag thumb-label">Symptoms · 2 min read</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">A002 · Dr. Svetlana [Last name], MD·PhD</div>
+          <h3 class="article-title">What Is Perimenopause? The Complete Guide</h3>
+          <p class="article-excerpt">Something has shifted — your sleep, your moods, your once-predictable period. If you're between your late 30s and early 50s, here's what's happening.</p>
+          <div class="article-footer">
+            <button class="read-toggle" onclick="toggleRead(this)" aria-expanded="false">
+              Read the short version <span class="arrow">↓</span>
+            </button>
+            <!-- CB-011 (primary), CB-039, CB-017, CB-056 — replace href with post URL when live -->
+            <a href="https://www.instagram.com/olonera/" target="_blank" rel="noopener" class="ig-link" title="See on Instagram (CB-011)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              See on Instagram
+            </a>
+          </div>
+          <div class="short-read">
+            <div class="short-read-inner">
+              <p>Perimenopause is the years-long transition <strong>before</strong> menopause, when your ovaries gradually make less estrogen and progesterone. It's not a disease — it's a biological transition, as real as puberty. The hormones don't fall in a smooth line; they <strong>fluctuate</strong>, which is why some days you feel normal and others you barely recognise yourself.</p>
+              <p><strong>The five things to know:</strong></p>
+              <ul>
+                <li><strong>It's not menopause.</strong> Menopause is one day — 12 months after your last period. Perimenopause is everything leading up to it, and lasts 4–8 years on average.</li>
+                <li><strong>It can start in your late 30s.</strong> Average onset is 47–48, but earlier is common. You are not "too young."</li>
+                <li><strong>It's whole-body.</strong> Hot flashes, sleep disruption, brain fog, anxiety, joint pain, irregular cycles — every system has estrogen receptors.</li>
+                <li><strong>A "normal" blood test doesn't rule it out.</strong> Hormones swing too much for one test; diagnosis is mainly clinical.</li>
+                <li><strong>You can still get pregnant</strong> until you've had 12 months with no period.</li>
+              </ul>
+              <p><strong>What to do:</strong> Track symptoms for a month, book an appointment <em>specifically</em> about perimenopause, and ask about FSH, estradiol, TSH and AMH together. Most symptoms are manageable — from lifestyle to non-hormonal options to HRT.</p>
+              <div class="sr-disclaimer">Content is educational and not a substitute for medical advice. Always consult your healthcare provider.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A003 -->
+      <div class="article-card">
+        <div class="article-thumb thumb-c">
+          <span class="tag thumb-label">Symptoms · 2 min read</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">A003 · Dr. Svetlana [Last name], MD·PhD</div>
+          <h3 class="article-title">Perimenopause &amp; Menopause Symptoms: The Definitive List</h3>
+          <p class="article-excerpt">Waking at 3am drenched. Snapping at someone for no reason. A period that came 12 days early then skipped a month. You're not going crazy.</p>
+          <div class="article-footer">
+            <button class="read-toggle" onclick="toggleRead(this)" aria-expanded="false">
+              Read the short version <span class="arrow">↓</span>
+            </button>
+            <!-- CB-016 (primary), CB-019 — replace href with post URL when live -->
+            <a href="https://www.instagram.com/olonera/" target="_blank" rel="noopener" class="ig-link" title="See on Instagram (CB-016)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              See on Instagram
+            </a>
+          </div>
+          <div class="short-read">
+            <div class="short-read-inner">
+              <p>Every cell in your body has estrogen receptors — brain, bones, heart, bladder, skin, joints. So when estrogen fluctuates, perimenopause doesn't look like one thing; it looks like dozens, arriving unpredictably. There are <strong>40+ documented symptoms</strong>. You won't have all of them.</p>
+              <p><strong>The most common:</strong></p>
+              <ul>
+                <li><strong>Vasomotor:</strong> hot flashes, night sweats, chills (~75% of women)</li>
+                <li><strong>Sleep:</strong> trouble falling asleep, 3am waking, unrefreshing sleep</li>
+                <li><strong>Menstrual:</strong> shorter/longer cycles, heavier/lighter flow, skipped periods</li>
+                <li><strong>Mood:</strong> new anxiety, irritability, low mood, mood swings, rage</li>
+                <li><strong>Cognitive:</strong> brain fog, word-finding lapses, slower processing</li>
+              </ul>
+              <p><strong>The ones nobody warns you about:</strong> joint pain · heart palpitations · vaginal dryness · urinary urgency · hair thinning · hormonal acne · dry eyes · "electric shock" sensations · breast tenderness.</p>
+              <p><strong>What to do:</strong> If a symptom is affecting your quality of life, that's reason enough to seek care. Track what you notice for a month. Get prompt care for very heavy bleeding or any bleeding 12+ months after your last period.</p>
+              <div class="sr-disclaimer">Content is educational and not a substitute for medical advice. Always consult your healthcare provider.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A004 -->
+      <div class="article-card">
+        <div class="article-thumb thumb-a">
+          <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Mental health · 3 min read</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">A004 · Dr. Svetlana [Last name] + LCSW review</div>
+          <h3 class="article-title">Mental Health &amp; Perimenopause: What's Really Happening in Your Brain</h3>
+          <p class="article-excerpt">If you don't recognise yourself lately — anxiety from nowhere, rage that frightens you, crying in the car for no reason — you're not breaking down.</p>
+          <div class="article-footer">
+            <button class="read-toggle" onclick="toggleRead(this)" aria-expanded="false">
+              Read the short version <span class="arrow">↓</span>
+            </button>
+            <!-- CB-036 (primary), CB-007, CB-047, CB-040, CB-053 — replace href with post URL when live -->
+            <a href="https://www.instagram.com/olonera/" target="_blank" rel="noopener" class="ig-link" title="See on Instagram (CB-036)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              See on Instagram
+            </a>
+          </div>
+          <div class="short-read">
+            <div class="short-read-inner">
+              <p>Estrogen is a brain hormone. It regulates serotonin (mood), dopamine (motivation, focus), and GABA (calm). When estrogen fluctuates in perimenopause, these systems destabilise — so anxiety, low mood, irritability and brain fog have a specific <strong>neurobiological cause</strong>. They are not "just stress."</p>
+              <p><strong>What this looks like:</strong></p>
+              <ul>
+                <li><strong>Anxiety:</strong> new in your 40s, physical (racing heart), worse before your period or at night. The most-missed perimenopause symptom.</li>
+                <li><strong>Depression:</strong> a recognised high-risk window, even with no prior history.</li>
+                <li><strong>Rage &amp; mood swings:</strong> fluctuating estrogen ramps up the amygdala. Real — not a character flaw.</li>
+                <li><strong>Brain fog:</strong> usually temporary; tends to improve after menopause.</li>
+                <li>Perimenopause can <strong>unmask ADHD</strong> (estrogen supports dopamine).</li>
+              </ul>
+              <p><strong>What helps:</strong> stabilising sleep (often the biggest amplifier), HRT, CBT, exercise, reducing alcohol.</p>
+              <p><strong>What to do:</strong> Ask your doctor <em>specifically</em> about perimenopause — many won't raise it unless you do. Seek urgent care for any thoughts of self-harm.</p>
+              <div class="sr-disclaimer">Content is educational and not a substitute for medical advice. Always consult your healthcare provider.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A005 -->
+      <div class="article-card">
+        <div class="article-thumb thumb-e">
+          <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Mental health · 2 min read</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">A005 · Dr. Svetlana [Last name], MD·PhD</div>
+          <h3 class="article-title">Brain Fog in Perimenopause: What's Actually Happening (and What Helps)</h3>
+          <p class="article-excerpt">Mid-sentence, the word just isn't there. You walk into a room and forget why. This is perimenopause brain fog — real, common, and not the start of dementia.</p>
+          <div class="article-footer">
+            <button class="read-toggle" onclick="toggleRead(this)" aria-expanded="false">
+              Read the short version <span class="arrow">↓</span>
+            </button>
+            <!-- CB-063 (primary), CB-006 — replace href with post URL when live -->
+            <a href="https://www.instagram.com/olonera/" target="_blank" rel="noopener" class="ig-link" title="See on Instagram (CB-063)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              See on Instagram
+            </a>
+          </div>
+          <div class="short-read">
+            <div class="short-read-inner">
+              <p>Estrogen supports acetylcholine (memory and attention) and brain glucose metabolism, and reduces neuroinflammation. When it fluctuates in perimenopause, cognitive sharpness dips. For most women this is <strong>temporary</strong> — verbal memory and processing speed tend to recover after menopause.</p>
+              <p><strong>What makes it worse:</strong> poor sleep (the biggest factor), chronic stress, alcohol, and low iron from heavy periods.</p>
+              <p><strong>What helps:</strong></p>
+              <ul>
+                <li><strong>Fix sleep first</strong> — it's where memory consolidates.</li>
+                <li><strong>Aerobic exercise</strong> — the best-evidenced lifestyle intervention for brain health.</li>
+                <li><strong>HRT</strong> — can improve verbal memory and concentration, especially started during the transition.</li>
+                <li><strong>Reduce cognitive load</strong> — lists, single-tasking, naming it out loud.</li>
+                <li>Trial cutting alcohol for 4–6 weeks.</li>
+              </ul>
+              <p><strong>What to do:</strong> See a provider if symptoms are severe, came on fast, or aren't improving with sleep and lifestyle changes.</p>
+              <div class="sr-disclaimer">Content is educational and not a substitute for medical advice. Always consult your healthcare provider.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A006 -->
+      <div class="article-card">
+        <div class="article-thumb thumb-f">
+          <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Vasomotor · 2 min read</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">A006 · Dr. Svetlana [Last name], MD·PhD</div>
+          <h3 class="article-title">Hot Flashes &amp; Night Sweats: Every Option, Briefly</h3>
+          <p class="article-excerpt">2am, soaked sheets, racing heart. A wave of heat mid-presentation. Hot flashes affect ~75% of perimenopausal women — and you deserve more than "it's just part of it."</p>
+          <div class="article-footer">
+            <button class="read-toggle" onclick="toggleRead(this)" aria-expanded="false">
+              Read the short version <span class="arrow">↓</span>
+            </button>
+            <!-- CB-008 (primary), CB-065 — replace href with post URL when live -->
+            <a href="https://www.instagram.com/olonera/" target="_blank" rel="noopener" class="ig-link" title="See on Instagram (CB-008)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              See on Instagram
+            </a>
+          </div>
+          <div class="short-read">
+            <div class="short-read-inner">
+              <p>As estrogen fluctuates, it narrows the brain's "thermoneutral zone," so tiny temperature changes trigger a full flush-and-sweat response. The good news: there's a full ladder of treatments that work.</p>
+              <p><strong>Your options, simplest first:</strong></p>
+              <ul>
+                <li><strong>Track triggers</strong> (alcohol, caffeine, spicy food, warm rooms) — eliminating yours can cut frequency. Cool bedroom (65–68°F) and paced breathing help.</li>
+                <li><strong>Non-hormonal medication:</strong> fezolinetant (Veozah, FDA-approved 2023, ~60% reduction), low-dose paroxetine 7.5mg, gabapentin for night-time.</li>
+                <li><strong>Hormone therapy:</strong> the most effective — reduces hot flashes up to 75–90%. Recommended for most healthy women under 60 within 10 years of menopause.</li>
+                <li><strong>Supplements</strong> (black cohosh, soy isoflavones, magnesium) have limited, mixed evidence. Use third-party-tested brands.</li>
+              </ul>
+              <p><strong>What to do:</strong> Match the option to your severity and health history with a menopause-informed provider. Severe symptoms are worth treating — not just tolerating.</p>
+              <div class="sr-disclaimer">Content is educational and not a substitute for medical advice. Supplement statements have not been evaluated by the FDA and are not intended to diagnose, treat, cure, or prevent any disease.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A007 -->
+      <div class="article-card">
+        <div class="article-thumb thumb-g">
+          <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Mental health · 2 min read</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">A007 · Dr. Svetlana [Last name] + LCSW review</div>
+          <h3 class="article-title">Anxiety &amp; Perimenopause: Why It Starts in Your 40s and What Actually Helps</h3>
+          <p class="article-excerpt">It started in your early 40s — a dread that wouldn't lift, a racing heart for no reason, panic attacks you'd never had. Nobody mentioned perimenopause.</p>
+          <div class="article-footer">
+            <button class="read-toggle" onclick="toggleRead(this)" aria-expanded="false">
+              Read the short version <span class="arrow">↓</span>
+            </button>
+            <!-- CB-013 (primary), CB-007 — replace href with post URL when live -->
+            <a href="https://www.instagram.com/olonera/" target="_blank" rel="noopener" class="ig-link" title="See on Instagram (CB-013)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              See on Instagram
+            </a>
+          </div>
+          <div class="short-read">
+            <div class="short-read-inner">
+              <p>Estrogen enhances GABA — your brain's anxiety-suppressing system. When estrogen swings in perimenopause, GABA function destabilises and anxiety follows. The signature: unpredictable, physical (palpitations, chest tightness), worse before your period, often waking you at 3–4am.</p>
+              <p><strong>Why it gets missed:</strong> medical training frames perimenopause around hot flashes and periods, not mental health. So SSRIs get prescribed and the hormonal driver goes unaddressed — and for hormonally-driven anxiety, SSRIs alone often give incomplete relief.</p>
+              <p><strong>What helps:</strong> HRT (often the most effective when the driver is hormonal), SSRIs/SNRIs best combined with hormonal treatment, CBT, treating sleep, reducing alcohol.</p>
+              <p><strong>How to advocate:</strong> <em>"I want to discuss whether my anxiety is related to perimenopause. It started in my 40s, is worse around my period and at night. I'd like a hormonal evaluation — FSH, estradiol, thyroid — and to discuss HRT."</em></p>
+              <p><strong>What to do:</strong> If you're dismissed or told you're "too young," you're entitled to a second opinion. Seek emergency care for any thoughts of self-harm.</p>
+              <div class="sr-disclaimer">Content is educational and not a substitute for medical advice. Always consult your healthcare provider.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /lib-grid -->
+
+    <p class="small" style="margin-top:32px;text-align:center">More articles publishing weekly. Every article is authored or reviewed by a credentialled clinician on our medical board. No advertorial. No undisclosed affiliates.</p>
+
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="section waitlist-section" id="waitlist">
+  <div class="waitlist-inner">
+    <div class="waitlist-scarcity">
+      <span class="hero-badge-dot"></span>
+      California · Closed beta · Founding member pricing locked
+    </div>
+    <h2 class="h2">The best version of you<br>in this decade <em>starts now.</em></h2>
+    <p class="lede">Be first in line. We'll notify you when California opens and tell you exactly what's ready.</p>
+    <div class="waitlist-ctas">
+      <a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Join the waitlist →</a>
+    </div>
+    <p class="waitlist-note">No spam. One email when we open. Unsubscribe any time.</p>
+  </div>
+</section>
+
+<!-- SPECIALIST CTA -->
+<section class="section-tight specialist-cta-section" id="specialists-apply">
+  <div class="specialist-cta-inner">
+    <span class="eyebrow" style="display:block;margin-bottom:14px">For functional specialists</span>
+    <h2 class="h2" style="color:var(--ink);margin-bottom:16px">Are you a functional specialist?<br><em>Join our founding cohort.</em></h2>
+    <p class="lede" style="margin-bottom:0">We're building our founding specialist network in California — nutritionists, naturopaths, health coaches, fitness and mental health experts who specialise in women's health and longevity.</p>
+
+    <div class="spec-types-row">
+      <span class="spec-type-tag">Registered Dietitian / Nutritionist</span>
+      <span class="spec-type-tag">Naturopathic Doctor</span>
+      <span class="spec-type-tag">Health Coach</span>
+      <span class="spec-type-tag">Mental Health Coach / LCSW</span>
+      <span class="spec-type-tag">Fitness Specialist</span>
+    </div>
+
+    <a href="https://tally.so/r/VL0Mdj" target="_blank" rel="noopener" class="btn btn-dark btn-lg">Apply for founding specialist status →</a>
+    <p class="small" style="margin-top:14px">Only 20 founding spots available · California-based practitioners only</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="wordmark" style="margin-bottom:10px">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg_footer" x1="15%" y1="85%" x2="75%" y2="5%">
+              <stop offset="0%" stop-color="#5B9B8A"/>
+              <stop offset="100%" stop-color="#C2796A"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="url(#lg_footer)"
+            stroke-width="9" stroke-linecap="round"
+            stroke-dasharray="148 42" transform="rotate(140 50 50)"/>
+          <circle cx="50" cy="50" r="8.5" fill="#C2796A"/>
+        </svg>
+        <span class="wordmark-text">olonera</span>
+      </div>
+      <p>A curated wellness coordination platform for women in perimenopause and menopause. MD/PhD-led. Evidence-based. Currently serving California.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#how">How it works</a>
+      <a href="#library">Library</a>
+      <a href="#waitlist">Join waitlist</a>
+      <a href="mailto:info@olonera.com">Contact</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    OLONERA is a curated wellness coordination platform. We do not provide medical care, diagnosis, or prescriptions. Information on this site is educational and is not a substitute for professional medical advice. Always seek the advice of your physician or other qualified healthcare provider. Statements regarding dietary supplements have not been evaluated by the FDA. Products are not intended to diagnose, treat, cure, or prevent any disease. Currently serving California only.
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Olonera Inc. All rights reserved. Made with care in Los Angeles.</span>
+    <span>info@olonera.com</span>
+  </div>
+</footer>
+
+<script>
+function toggleRead(btn) {
+  const card = btn.closest('.article-body');
+  const panel = card.querySelector('.short-read');
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+  btn.querySelector('.arrow').textContent = isOpen ? '↓' : '↑';
+}
+
+function filterShelf(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.prod-card').forEach(card => {
+    const cats = card.dataset.cats || '';
+    card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+  });
+}
+
+// Waitlist handled by Tally.so
+</script>
+</body>
+</html>
