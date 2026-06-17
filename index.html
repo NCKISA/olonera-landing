@@ -76,7 +76,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
 .nav{position:sticky;top:0;z-index:90;background:rgba(251,250,247,.82);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:1160px;margin:0 auto;padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .wordmark{display:flex;align-items:center;gap:10px;text-decoration:none}
-.wordmark-text{font-weight:700;font-size:22px;letter-spacing:-.025em;color:#1E3A5C;line-height:1}
+.wordmark-text{font-weight:700;font-size:22px;letter-spacing:-.025em;color:var(--ink);line-height:1}
 .wordmark-dot{display:none}/* replaced by SVG mark */
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-link{font-size:13px;color:var(--secondary);transition:color var(--t)}
@@ -233,6 +233,41 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
 .footer-links a:hover{color:var(--ink)}
 .footer-bottom{max-width:1160px;margin:24px auto 0;padding:24px 28px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--tertiary)}
 .footer-disclaimer{max-width:1160px;margin:0 auto;padding:0 28px;font-size:11.5px;color:var(--secondary);line-height:1.7;margin-top:20px}
+
+/* ── COMPARISON TABLE ── */
+.compare-section{background:var(--paper)}
+.compare-table{width:100%;border-collapse:collapse;margin-top:48px;font-size:14px}
+.compare-table th{padding:16px 20px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--secondary);border-bottom:2px solid var(--line)}
+.compare-table th.highlight{background:var(--ink);color:#fff;border-radius:var(--r-sm) var(--r-sm) 0 0}
+.compare-table td{padding:16px 20px;border-bottom:1px solid var(--line-soft);color:var(--secondary);vertical-align:top;line-height:1.5}
+.compare-table td.highlight{background:var(--accent-tint);color:var(--ink);font-weight:500}
+.compare-table tr:last-child td{border-bottom:0}
+.compare-table .row-label{color:var(--ink);font-weight:500}
+@media(max-width:720px){.compare-table{font-size:12px}.compare-table th,.compare-table td{padding:12px 10px}}
+
+/* ── VIDEO ── */
+.video-section{background:var(--mist)}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--r-xl);box-shadow:var(--shadow-lg);margin-top:40px}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:var(--r-xl)}
+.video-placeholder{background:linear-gradient(135deg,var(--plum),#5A2F40);border-radius:var(--r-xl);margin-top:40px;padding:80px 40px;text-align:center;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:320px;text-decoration:none}
+.video-play{width:72px;height:72px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:all .25s var(--ease)}
+.video-placeholder:hover .video-play{background:rgba(255,255,255,.25);transform:scale(1.08)}
+
+/* ── FAQ ── */
+.faq-section{background:var(--mist)}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:3px}
+.faq-item{background:var(--white);border-radius:var(--r-md);overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:22px 26px;font-family:var(--font-sans);font-weight:600;font-size:16px;color:var(--ink);letter-spacing:-.015em;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background var(--t) var(--ease);cursor:pointer;border:0;background:transparent}
+.faq-q:hover{background:var(--mist)}
+.faq-q svg{flex-shrink:0;transition:transform var(--t) var(--ease);color:var(--accent)}
+.faq-item.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 26px 22px;font-size:15px;color:var(--secondary);line-height:1.65}
+.faq-item.open .faq-a{display:block}
+
+/* ── COMING SOON SHELF ── */
+.coming-soon-shelf{background:var(--paper);text-align:center}
+.coming-soon-card{max-width:680px;margin:40px auto 0;background:var(--mist);border-radius:var(--r-xl);padding:56px 40px;border:1px dashed var(--sand)}
+.coming-soon-card .eyebrow{display:block;margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -268,7 +303,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      California · Closed beta opening
+      Beta opens September 2026 · LA &amp; Bay Area first
     </div>
 
     <h1 class="h1">
@@ -284,7 +319,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
       <a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Join the waitlist →</a>
       <a href="#library" class="btn btn-outline btn-lg">Read the library</a>
     </div>
-    <p class="hero-note">Free to start · No credit card · No commitment</p>
+    <p class="hero-note">Free to start · No credit card · Beta opens September 2026</p>
   </div>
 </section>
 
@@ -292,22 +327,22 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span class="m-item">
-      Functional specialist matching<span class="m-sep">·</span>
-      Science-backed supplements<span class="m-sep">·</span>
-      Clinician-written knowledge library<span class="m-sep">·</span>
-      Perimenopause &amp; menopause focused<span class="m-sep">·</span>
-      Lab interpretation from existing tests<span class="m-sep">·</span>
-      Built for women's health &amp; longevity<span class="m-sep">·</span>
-      California · Closed beta<span class="m-sep">·</span>
+      Your 40s deserve more than "your labs are normal."<span class="m-sep">·</span>
+      The coordination layer conventional medicine never built<span class="m-sep">·</span>
+      Built for this decade. Not the last one.<span class="m-sep">·</span>
+      Functional specialists who actually have time for you<span class="m-sep">·</span>
+      Science-backed supplements curated for perimenopause<span class="m-sep">·</span>
+      Knowledge that respects your intelligence<span class="m-sep">·</span>
+      Beta opens September 2026 · California first<span class="m-sep">·</span>
     </span>
     <span class="m-item" aria-hidden="true">
-      Functional specialist matching<span class="m-sep">·</span>
-      Science-backed supplements<span class="m-sep">·</span>
-      Clinician-written knowledge library<span class="m-sep">·</span>
-      Perimenopause &amp; menopause focused<span class="m-sep">·</span>
-      Lab interpretation from existing tests<span class="m-sep">·</span>
-      Built for women's health &amp; longevity<span class="m-sep">·</span>
-      California · Closed beta<span class="m-sep">·</span>
+      Your 40s deserve more than "your labs are normal."<span class="m-sep">·</span>
+      The coordination layer conventional medicine never built<span class="m-sep">·</span>
+      Built for this decade. Not the last one.<span class="m-sep">·</span>
+      Functional specialists who actually have time for you<span class="m-sep">·</span>
+      Science-backed supplements curated for perimenopause<span class="m-sep">·</span>
+      Knowledge that respects your intelligence<span class="m-sep">·</span>
+      Beta opens September 2026 · California first<span class="m-sep">·</span>
     </span>
   </div>
 </div>
@@ -327,38 +362,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
         </p>
         <a href="#waitlist" class="btn btn-dark">Join the waitlist →</a>
       </div>
-
-      <div class="who-visual">
-        <p class="eyebrow" style="margin-bottom:20px">How it works</p>
-        <div class="who-step">
-          <div class="step-n">01</div>
-          <div class="step-body">
-            <h4>Tell us where you are</h4>
-            <p>A 4-minute intake — your symptoms, stage, goals, and any prior tests you already have. No commitment required.</p>
-          </div>
-        </div>
-        <div class="who-step">
-          <div class="step-n">02</div>
-          <div class="step-body">
-            <h4>Meet your matched specialist</h4>
-            <p>A hand-picked functional expert — nutritionist, naturopath, health coach, or fitness specialist — matched to your exact presentation. They review labs you already have, or help you know which ones to get.</p>
-          </div>
-        </div>
-        <div class="who-step">
-          <div class="step-n">03</div>
-          <div class="step-body">
-            <h4>Get your curated supplement stack</h4>
-            <p>Your specialist builds your personal stack from science-backed supplements chosen by our medical board — not a generic protocol.</p>
-          </div>
-        </div>
-        <div class="who-step">
-          <div class="step-n">04</div>
-          <div class="step-body">
-            <h4>Learn as you go</h4>
-            <p>Clinician-written guides and research reviews, curated for this life stage. The knowledge library is free for everyone — starting now.</p>
-          </div>
-        </div>
       </div>
+    </div>
     </div>
 
     <!-- 4 pillars -->
@@ -387,6 +392,84 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
   </div>
 </section>
 
+
+<!-- COMPARISON TABLE -->
+<section class="section compare-section" id="why-olonera">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block;margin-bottom:14px">Why OLONERA</span>
+    <h2 class="h2" style="max-width:640px">How we're different from<br>what you already have.</h2>
+    <p class="lede" style="margin-top:14px;max-width:600px">Your GP, generic wellness apps, and OLONERA — three very different things. Here's where each one fits.</p>
+
+    <div style="overflow-x:auto">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:30%">What you need</th>
+            <th>Your GP / OB-GYN</th>
+            <th>Generic apps &amp; Google</th>
+            <th class="highlight">OLONERA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">Time with you</td>
+            <td>7–12 min per appointment</td>
+            <td>No human — algorithm only</td>
+            <td class="highlight">45-min initial session + ongoing async</td>
+          </tr>
+          <tr>
+            <td class="row-label">Menopause expertise</td>
+            <td>General training only — rarely specialised</td>
+            <td>Generic content, not personalised</td>
+            <td class="highlight">Every specialist is vetted for peri &amp; menopause</td>
+          </tr>
+          <tr>
+            <td class="row-label">Lab interpretation</td>
+            <td>Standard ranges — "everything looks normal"</td>
+            <td>No lab review</td>
+            <td class="highlight">Reviewed through a women's longevity lens</td>
+          </tr>
+          <tr>
+            <td class="row-label">Supplement guidance</td>
+            <td>Rarely discussed, rarely evidence-based</td>
+            <td>Sponsored, generic, unverified</td>
+            <td class="highlight">Curated by our medical board, matched to you</td>
+          </tr>
+          <tr>
+            <td class="row-label">Coordination</td>
+            <td>Isolated — doesn't talk to your other providers</td>
+            <td>None</td>
+            <td class="highlight">Your specialist coordinates with your existing care</td>
+          </tr>
+          <tr>
+            <td class="row-label">Prescriptions / diagnosis</td>
+            <td>✅ Yes — they diagnose and prescribe</td>
+            <td>❌ No</td>
+            <td class="highlight">❌ No — we complement clinical care, not replace it</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- VIDEO — FOUNDER -->
+<section class="section-sm video-section" id="founder-video">
+  <div class="wrap-narrow" style="text-align:center">
+    <span class="eyebrow" style="display:block;margin-bottom:14px">Meet the founders</span>
+    <h2 class="h2" style="margin-bottom:16px">Why we built <em>OLONERA.</em></h2>
+    <p class="lede" style="max-width:560px;margin:0 auto">Hear directly from Svetlana and Natasha — two women who lived the problem and decided to build the solution.</p>
+    <a href="https://www.instagram.com/olonera.health/" target="_blank" rel="noopener" class="video-placeholder">
+      <div class="video-play">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+      <p style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px">Watch on Instagram → @olonera.health</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.45);margin-top:4px">~90 seconds · filmed by the founders</p>
+    </a>
+  </div>
+</section>
+
 <!-- LIBRARY -->
 <section class="section lib-section" id="library">
   <div class="wrap">
@@ -406,7 +489,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
           <span class="tag thumb-label">Symptoms · 2 min read</span>
         </div>
         <div class="article-body">
-          <div class="article-meta">A002 · Dr. Svetlana [Last name], MD·PhD</div>
+          <div class="article-meta">A002 · OLONERA Medical Board, MD·PhD</div>
           <h3 class="article-title">What Is Perimenopause? The Complete Guide</h3>
           <p class="article-excerpt">Something has shifted — your sleep, your moods, your once-predictable period. If you're between your late 30s and early 50s, here's what's happening.</p>
           <div class="article-footer">
@@ -443,7 +526,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
           <span class="tag thumb-label">Symptoms · 2 min read</span>
         </div>
         <div class="article-body">
-          <div class="article-meta">A003 · Dr. Svetlana [Last name], MD·PhD</div>
+          <div class="article-meta">A003 · OLONERA Medical Board, MD·PhD</div>
           <h3 class="article-title">Perimenopause &amp; Menopause Symptoms: The Definitive List</h3>
           <p class="article-excerpt">Waking at 3am drenched. Snapping at someone for no reason. A period that came 12 days early then skipped a month. You're not going crazy.</p>
           <div class="article-footer">
@@ -481,7 +564,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
           <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Mental health · 3 min read</span>
         </div>
         <div class="article-body">
-          <div class="article-meta">A004 · Dr. Svetlana [Last name] + LCSW review</div>
+          <div class="article-meta">A004 · OLONERA Medical Board + LCSW review</div>
           <h3 class="article-title">Mental Health &amp; Perimenopause: What's Really Happening in Your Brain</h3>
           <p class="article-excerpt">If you don't recognise yourself lately — anxiety from nowhere, rage that frightens you, crying in the car for no reason — you're not breaking down.</p>
           <div class="article-footer">
@@ -519,7 +602,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
           <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Mental health · 2 min read</span>
         </div>
         <div class="article-body">
-          <div class="article-meta">A005 · Dr. Svetlana [Last name], MD·PhD</div>
+          <div class="article-meta">A005 · OLONERA Medical Board, MD·PhD</div>
           <h3 class="article-title">Brain Fog in Perimenopause: What's Actually Happening (and What Helps)</h3>
           <p class="article-excerpt">Mid-sentence, the word just isn't there. You walk into a room and forget why. This is perimenopause brain fog — real, common, and not the start of dementia.</p>
           <div class="article-footer">
@@ -557,7 +640,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
           <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Vasomotor · 2 min read</span>
         </div>
         <div class="article-body">
-          <div class="article-meta">A006 · Dr. Svetlana [Last name], MD·PhD</div>
+          <div class="article-meta">A006 · OLONERA Medical Board, MD·PhD</div>
           <h3 class="article-title">Hot Flashes &amp; Night Sweats: Every Option, Briefly</h3>
           <p class="article-excerpt">2am, soaked sheets, racing heart. A wave of heat mid-presentation. Hot flashes affect ~75% of perimenopausal women — and you deserve more than "it's just part of it."</p>
           <div class="article-footer">
@@ -593,7 +676,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
           <span class="tag thumb-label" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.15)">Mental health · 2 min read</span>
         </div>
         <div class="article-body">
-          <div class="article-meta">A007 · Dr. Svetlana [Last name] + LCSW review</div>
+          <div class="article-meta">A007 · OLONERA Medical Board + LCSW review</div>
           <h3 class="article-title">Anxiety &amp; Perimenopause: Why It Starts in Your 40s and What Actually Helps</h3>
           <p class="article-excerpt">It started in your early 40s — a dread that wouldn't lift, a racing heart for no reason, panic attacks you'd never had. Nobody mentioned perimenopause.</p>
           <div class="article-footer">
@@ -626,6 +709,75 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
   </div>
 </section>
 
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="wrap-narrow">
+    <span class="eyebrow" style="display:block;margin-bottom:14px">Questions</span>
+    <h2 class="h2" style="margin-bottom:0">Things we hear most.</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="true">
+          Is OLONERA a telehealth clinic? Do I need a doctor's referral?
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a">No — and no. OLONERA is a coordination platform, not a telehealth clinic. Our specialists are functional health practitioners (nutritionists, naturopaths, health coaches, fitness and mental health experts). They do not diagnose or prescribe. You don't need a referral — you sign up, take the intake assessment, and we match you. OLONERA works alongside your existing clinical care; it doesn't replace it.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What does it actually cost?
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a">The knowledge library is free — no sign-up required. Full pricing for the specialist matching and supplement shelf will be shared with waitlist members before we launch. Founding members receive early access pricing. Joining the waitlist is free and there is no obligation.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How is this different from just Googling or seeing my GP?
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a">Google gives you generic information — not a specialist who knows your bloodwork, your symptoms, and your goals. Your GP typically has 7–12 minutes per appointment and general training, not menopause specialisation. OLONERA gives you a practitioner with 45 minutes, menopause expertise, and the ability to review your existing labs — plus a curated supplement shelf and clinician-written library built specifically for this life stage.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Are the supplements safe? Are they FDA-regulated?
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a">Every supplement on the OLONERA shelf is selected by our medical board for clinical evidence, quality, and third-party verification (USP, NSF, or ConsumerLab). Dietary supplements in the US are regulated by the FDA under DSHEA — they are not approved for disease treatment, and we do not claim they are. We display evidence grades on every product. Your specialist builds your stack based on your specific situation — not a one-size-fits-all protocol.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What happens after I join the waitlist — when do you launch?
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a">We're opening the California beta in September 2026, starting in LA and the Bay Area. When we're ready for you, we'll email you with your access link, founding member pricing, and next steps. You won't be added to any marketing list — just one email when it's your turn. The knowledge library is already live and free to read right now.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          I'm a specialist — how does OLONERA work for practitioners?
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a">We're building a founding cohort of 20 California-based functional health specialists. You'll receive pre-qualified client matches, a practitioner dashboard, and access to our protocol library. There's no cost to join — apply below. We verify credentials, review your specialisation, and match you with members who specifically need your expertise.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          I'm not in California — can I still join?
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a">Yes — the waitlist is open nationally. California launches first (September 2026). We'll notify you when your state opens. The knowledge library is available to read from anywhere, right now.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- WAITLIST -->
 <section class="section waitlist-section" id="waitlist">
   <div class="waitlist-inner">
@@ -638,7 +790,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
     <div class="waitlist-ctas">
       <a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Join the waitlist →</a>
     </div>
-    <p class="waitlist-note">No spam. One email when we open. Unsubscribe any time.</p>
+    <p class="waitlist-note">We'll email you when California opens — expected September 2026. No spam. Unsubscribe any time.</p>
   </div>
 </section>
 
@@ -720,6 +872,18 @@ function filterShelf(btn, cat) {
 }
 
 // Waitlist handled by Tally.so
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b => b.setAttribute('aria-expanded','false'));
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+
 </script>
 </body>
 </html>
