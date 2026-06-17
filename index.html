@@ -103,7 +103,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
 .m-sep{color:var(--accent);font-family:var(--font-serif);font-style:italic;font-size:17px;line-height:1}
 
 /* ── WHO WE ARE ── */
-.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.who-grid{display:block;max-width:720px;margin:0 auto;text-align:center}
 .who-visual{background:var(--mist);border-radius:var(--r-xl);padding:40px 36px}
 .who-step{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
 .who-step:first-child{padding-top:0}
@@ -360,7 +360,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
         <p class="body" style="margin-bottom:32px">
           We are not a telehealth clinic. We are not a supplement store. We are the coordination layer between you and the functional specialists — nutritionists, naturopaths, health coaches, fitness and mental health experts — who have the time, the training, and the longevity framework your GP doesn't.
         </p>
-        <a href="#waitlist" class="btn btn-dark">Join the waitlist →</a>
+        <div style="display:flex;justify-content:center;margin-top:32px"><a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Join the waitlist →</a></div>
       </div>
       </div>
     </div>
@@ -393,65 +393,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
 </section>
 
 
-<!-- COMPARISON TABLE -->
-<section class="section compare-section" id="why-olonera">
-  <div class="wrap">
-    <span class="eyebrow" style="display:block;margin-bottom:14px">Why OLONERA</span>
-    <h2 class="h2" style="max-width:640px">How we're different from<br>what you already have.</h2>
-    <p class="lede" style="margin-top:14px;max-width:600px">Your GP, generic wellness apps, and OLONERA — three very different things. Here's where each one fits.</p>
-
-    <div style="overflow-x:auto">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th style="width:30%">What you need</th>
-            <th>Your GP / OB-GYN</th>
-            <th>Generic apps &amp; Google</th>
-            <th class="highlight">OLONERA</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="row-label">Time with you</td>
-            <td>7–12 min per appointment</td>
-            <td>No human — algorithm only</td>
-            <td class="highlight">45-min initial session + ongoing async</td>
-          </tr>
-          <tr>
-            <td class="row-label">Menopause expertise</td>
-            <td>General training only — rarely specialised</td>
-            <td>Generic content, not personalised</td>
-            <td class="highlight">Every specialist is vetted for peri &amp; menopause</td>
-          </tr>
-          <tr>
-            <td class="row-label">Lab interpretation</td>
-            <td>Standard ranges — "everything looks normal"</td>
-            <td>No lab review</td>
-            <td class="highlight">Reviewed through a women's longevity lens</td>
-          </tr>
-          <tr>
-            <td class="row-label">Supplement guidance</td>
-            <td>Rarely discussed, rarely evidence-based</td>
-            <td>Sponsored, generic, unverified</td>
-            <td class="highlight">Curated by our medical board, matched to you</td>
-          </tr>
-          <tr>
-            <td class="row-label">Coordination</td>
-            <td>Isolated — doesn't talk to your other providers</td>
-            <td>None</td>
-            <td class="highlight">Your specialist coordinates with your existing care</td>
-          </tr>
-          <tr>
-            <td class="row-label">Prescriptions / diagnosis</td>
-            <td>✅ Yes — they diagnose and prescribe</td>
-            <td>❌ No</td>
-            <td class="highlight">❌ No — we complement clinical care, not replace it</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
 
 
 <!-- VIDEO — FOUNDER -->
