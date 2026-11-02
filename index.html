@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OLONERA — Your body is changing. Build it stronger.</title>
-<meta name="description" content="OLONERA matches women in perimenopause and menopause with functional specialists, science-backed supplements, and a curated knowledge library. California — join the waitlist.">
+<title>OLONERA — Feel like your best self again.</title>
+<meta name="description" content="Perimenopause and menopause, finally in one place: a specialist who has time for you, medical-board-vetted supplements, and a knowledge library that respects your intelligence. Free 40+ checklist — no sign-up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -268,6 +268,31 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
 .coming-soon-shelf{background:var(--paper);text-align:center}
 .coming-soon-card{max-width:680px;margin:40px auto 0;background:var(--mist);border-radius:var(--r-xl);padding:56px 40px;border:1px dashed var(--sand)}
 .coming-soon-card .eyebrow{display:block;margin-bottom:16px}
+
+/* ===== FREE RESOURCE / CHECKLIST ===== */
+.resource-section{background:var(--mist)}
+.resource-grid{display:grid;grid-template-columns:1fr 0.85fr;gap:56px;align-items:center}
+@media(max-width:880px){.resource-grid{grid-template-columns:1fr;gap:36px}}
+.resource-copy .h2{margin:14px 0 16px}
+.res-points{list-style:none;margin:24px 0 30px;display:grid;gap:11px}
+.res-points li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--graphite)}
+.res-points svg{flex-shrink:0;margin-top:3px;color:var(--accent-deep)}
+.res-note{font-size:13px;color:var(--secondary);margin-top:14px}
+.res-preview{background:var(--white);border:1px solid var(--line-soft);border-radius:var(--r-lg);
+  box-shadow:var(--shadow-md);padding:28px 26px;transform:rotate(-1.2deg)}
+.res-preview-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.res-preview-eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
+.res-preview-pages{font-size:11px;color:var(--tertiary)}
+.res-preview h4{font-family:var(--font-serif);font-size:23px;font-weight:400;line-height:1.18;margin-bottom:18px}
+.res-preview h4 em{font-style:italic;color:var(--accent-deep)}
+.res-row{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line-soft);font-size:13.5px;color:var(--graphite)}
+.res-row:last-of-type{border-bottom:none}
+.res-box{width:14px;height:14px;border:1.5px solid var(--sand);border-radius:4px;flex-shrink:0}
+.res-box.ticked{background:var(--accent);border-color:var(--accent);position:relative}
+.res-box.ticked::after{content:'';position:absolute;left:4px;top:1px;width:4px;height:8px;
+  border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(42deg)}
+.res-fade{margin-top:12px;height:38px;background:linear-gradient(to bottom,var(--white),rgba(255,255,255,0));
+  position:relative;margin-bottom:-14px}
 </style>
 </head>
 <body>
@@ -293,6 +318,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
     <div class="nav-right">
       <a href="#how" class="nav-link">How it works</a>
       <a href="#library" class="nav-link">Library</a>
+      <a href="#checklist" class="nav-link">Free checklist</a>
       <a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-sm">Join the waitlist</a>
     </div>
   </div>
@@ -307,19 +333,18 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
     </div>
 
     <h1 class="h1">
-      Your body is changing.<br>
-      Build it <em>stronger.</em>
+      Feel like your<br>
+      <em>best self</em> again.
     </h1>
 
     <p class="lede">
-      OLONERA matches women in perimenopause and menopause with functional specialists, a curated marketplace of science-backed supplements, and a knowledge library built for this decade. Start where you are.
+      A specialist who actually has time for you. Supplements chosen by our medical board — not an ad budget. A knowledge library that respects your intelligence. Perimenopause and menopause, finally in one place.
     </p>
 
     <div class="hero-ctas">
       <a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Join the waitlist →</a>
-      <a href="#library" class="btn btn-outline btn-lg">Read the library</a>
     </div>
-    <p class="hero-note">Free to start · No credit card · California first</p>
+    <p class="hero-note">Free to join · No credit card · California first</p>
   </div>
 </section>
 
@@ -357,7 +382,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
         <p class="lede" style="margin-bottom:32px">
           Olonera gives women a private health cabinet to centralize their labs, meet with top-tier functional specialists, and access personalized, lab-backed longevity supplements. We don't prescribe or diagnose — we give you the exact team and tools needed to take proactive control of your healthy lifespan, all in one place.
         </p>
-        <div style="display:flex;justify-content:center;margin-top:32px"><a href="https://tally.so/r/b5APj7" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Join the waitlist →</a></div>
       </div>
       </div>
 
@@ -389,6 +413,60 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;o
 
 
 
+
+<!-- FREE RESOURCE — 40+ CHECKLIST -->
+<section class="section resource-section" id="checklist">
+  <div class="wrap">
+    <div class="resource-grid">
+
+      <div class="resource-copy">
+        <span class="eyebrow">Free · No sign-up required</span>
+        <h2 class="h2">Walk in with specifics.<br>Walk out with <em>a plan.</em></h2>
+        <p class="lede">
+          Most appointments in this decade end with "your labs are normal." The 40+ Checklist is what we wish
+          every woman had in her bag: what to track, which numbers to know, and the questions that get a real answer.
+        </p>
+
+        <ul class="res-points">
+          <li>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>A two-week symptom tracker your clinician can actually read</span>
+          </li>
+          <li>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>The numbers worth knowing before you go — and what each one is for</span>
+          </li>
+          <li>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Nine questions that get past "this is just your age"</span>
+          </li>
+          <li>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>The symptoms that shouldn't wait for your next routine visit</span>
+          </li>
+        </ul>
+
+        <a href="checklist.html" class="btn btn-outline btn-lg">Open the checklist →</a>
+        <p class="res-note">Free to read and print. No email, no account — it's yours.</p>
+      </div>
+
+      <div class="res-preview" aria-hidden="true">
+        <div class="res-preview-top">
+          <span class="res-preview-eyebrow">The 40+ Checklist</span>
+          <span class="res-preview-pages">2 pages</span>
+        </div>
+        <h4>Questions that get you <em>a real answer.</em></h4>
+        <div class="res-row"><span class="res-box ticked"></span><span>Do you think I'm in perimenopause?</span></div>
+        <div class="res-row"><span class="res-box ticked"></span><span>What else could be causing this?</span></div>
+        <div class="res-row"><span class="res-box"></span><span>What are all my options — hormonal and not?</span></div>
+        <div class="res-row"><span class="res-box"></span><span>Am I a candidate for hormone therapy?</span></div>
+        <div class="res-row"><span class="res-box"></span><span>When should I expect to feel a difference?</span></div>
+        <div class="res-fade"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- VIDEO — FOUNDER -->
 <section class="section-sm video-section" id="founder-video">

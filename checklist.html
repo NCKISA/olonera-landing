@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 40+ Checklist — OLONERA</title>
+<meta name="description" content="A free, clinician-informed checklist for women 40+: what to track before your appointment, which numbers to ask about, and the questions that get you a real answer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF7; --white:#FFFFFF; --mist:#F4F1EB; --sand:#E8DECF;
+  --ink:#1B1816; --graphite:#2F2A26; --secondary:#6B6560; --tertiary:#9A938C;
+  --line:rgba(27,24,22,0.10); --line-soft:rgba(27,24,22,0.06);
+  --accent:#C28575; --accent-deep:#A26155; --accent-tint:#F2D7CD;
+  --green:#3D7A5C; --green-tint:#E4EFE9;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --font-serif:'Instrument Serif',Georgia,serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;font-size:15px}
+.sheet{max-width:840px;margin:0 auto;padding:56px 32px 80px}
+
+/* header */
+.wordmark{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);margin-bottom:40px}
+.wordmark-text{font-family:var(--font-serif);font-size:23px;letter-spacing:.01em}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
+h1{font-family:var(--font-serif);font-size:clamp(34px,6vw,52px);line-height:1.08;font-weight:400;margin:14px 0 18px;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent-deep)}
+.lede{font-size:17px;color:var(--secondary);max-width:62ch}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{font-size:12px;padding:6px 13px;border-radius:999px;background:var(--mist);color:var(--graphite);border:1px solid var(--line-soft)}
+
+.rule{height:1px;background:var(--line);margin:44px 0}
+
+/* sections */
+section{margin-bottom:40px;break-inside:avoid}
+.s-num{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);font-weight:600;margin-bottom:8px}
+h2{font-family:var(--font-serif);font-size:27px;font-weight:400;line-height:1.2;margin-bottom:8px}
+.s-intro{color:var(--secondary);margin-bottom:20px;max-width:62ch;font-size:14.5px}
+
+/* checklist items */
+ul.check{list-style:none}
+ul.check li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line-soft)}
+ul.check li:last-child{border-bottom:none}
+.box{flex-shrink:0;width:16px;height:16px;border:1.5px solid var(--sand);border-radius:4px;margin-top:3px;background:var(--white)}
+.item-main{font-weight:500}
+.item-sub{color:var(--secondary);font-size:13.5px;display:block;margin-top:2px;font-weight:400}
+
+/* tracker grid */
+table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left}
+th{background:var(--mist);font-weight:600;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--graphite)}
+td.sym{font-weight:500;width:34%}
+td.blank{background:var(--white)}
+
+/* callouts */
+.note{background:var(--mist);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--graphite);margin-top:20px}
+.note strong{font-weight:600}
+.warn{background:var(--green-tint);border-left:3px solid var(--green);border-radius:0 12px 12px 0;padding:18px 20px;font-size:14px;margin-top:8px}
+.warn h3{font-size:14px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+.warn ul{list-style:none;display:grid;gap:5px}
+.warn li{padding-left:16px;position:relative;color:var(--graphite)}
+.warn li::before{content:'→';position:absolute;left:0;color:var(--green)}
+
+/* footer */
+.foot{margin-top:52px;padding-top:26px;border-top:1px solid var(--line);font-size:12px;color:var(--tertiary);line-height:1.65}
+.foot a{color:var(--accent-deep)}
+.back{display:inline-block;margin-top:18px;font-size:13.5px;color:var(--accent-deep);text-decoration:none;font-weight:500}
+.print-cta{margin:30px 0 0;padding:16px 20px;background:var(--accent-tint);border-radius:14px;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.print-btn{font-family:inherit;font-size:13.5px;font-weight:500;padding:9px 18px;border-radius:999px;border:none;background:var(--ink);color:var(--paper);cursor:pointer}
+
+@media print{
+  body{background:#fff;font-size:11.5pt}
+  .sheet{max-width:none;padding:0}
+  .print-cta,.back{display:none}
+  section{page-break-inside:avoid}
+  .rule{margin:24px 0}
+  h1{font-size:30pt}
+}
+@media(max-width:560px){
+  .sheet{padding:36px 20px 60px}
+  table{font-size:11.5px}
+  th,td{padding:6px 7px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <a href="index.html" class="wordmark" aria-label="OLONERA — home">
+    <svg width="30" height="30" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="lg_cl" x1="15%" y1="85%" x2="75%" y2="5%">
+          <stop offset="0%" stop-color="#5B9B8A"/><stop offset="100%" stop-color="#C2796A"/>
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="30" fill="none" stroke="url(#lg_cl)" stroke-width="9"
+        stroke-linecap="round" stroke-dasharray="148 42" transform="rotate(140 50 50)"/>
+      <circle cx="50" cy="50" r="8.5" fill="#C2796A"/>
+    </svg>
+    <span class="wordmark-text">olonera</span>
+  </a>
+
+  <span class="eyebrow">Free resource · No sign-up required</span>
+  <h1>The 40+ Checklist:<br>what to track, and<br>what to <em>actually ask.</em></h1>
+  <p class="lede">
+    Most appointments in this decade end with "your labs are normal." This checklist exists so you walk in with
+    specifics instead of a vague sense that something is off — and walk out with an actual plan.
+  </p>
+
+  <div class="meta-row">
+    <span class="pill">Print it · 2 pages</span>
+    <span class="pill">Track for 2 weeks before your visit</span>
+    <span class="pill">Bring it with you</span>
+  </div>
+
+  <div class="print-cta">
+    <span><strong>Want this as a PDF?</strong> Print this page and choose "Save as PDF."</span>
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="rule"></div>
+
+  <section>
+    <div class="s-num">Part 01</div>
+    <h2>Track these for two weeks</h2>
+    <p class="s-intro">
+      Patterns are far more useful to a clinician than a single bad day. Tick the days a symptom shows up —
+      frequency and timing are what make a vague complaint into usable information.
+    </p>
+    <table>
+      <thead>
+        <tr><th class="sym">Symptom</th><th>Days 1–7</th><th>Days 8–14</th><th>Worst time of day</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="sym">Hot flashes / night sweats</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Sleep — waking, and when</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Mood, irritability, anxiety</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Brain fog / word-finding</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Energy crashes</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Joint or muscle aches</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Cycle changes (length, flow)</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Libido / vaginal dryness</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+        <tr><td class="sym">Heart racing / palpitations</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <strong>One line that changes the conversation:</strong> write down which symptom you would most want gone
+      if you could only fix one. It forces a priority, and it tells your clinician where to start.
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section>
+    <div class="s-num">Part 02</div>
+    <h2>Know your numbers before you go</h2>
+    <p class="s-intro">
+      You may already have many of these from past bloodwork. Gather what you have — and note what's missing,
+      so you can ask whether it's worth checking.
+    </p>
+    <ul class="check">
+      <li><span class="box"></span><span><span class="item-main">Blood pressure</span>
+        <span class="item-sub">Cardiovascular risk shifts in this decade; a recent reading is a useful baseline.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">Full lipid panel</span>
+        <span class="item-sub">Total, LDL, HDL, triglycerides — and the date it was taken.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">HbA1c or fasting glucose</span>
+        <span class="item-sub">Metabolic changes often show up here before anywhere else.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">Thyroid panel (TSH, and free T4 if available)</span>
+        <span class="item-sub">Thyroid issues mimic perimenopause closely enough to be worth ruling out.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">Ferritin and complete blood count</span>
+        <span class="item-sub">Relevant if your periods have become heavier or more frequent.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">Vitamin D</span>
+        <span class="item-sub">Commonly low, and relevant to bone health as estrogen declines.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">Last bone-density scan, if you've had one</span>
+        <span class="item-sub">Ask whether your history or risk factors make one worth discussing.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">Current medications and supplements</span>
+        <span class="item-sub">Full list, with doses — including anything over the counter.</span></span></li>
+    </ul>
+    <div class="note">
+      <strong>A note on hormone testing:</strong> in perimenopause, hormone levels fluctuate enough day to day
+      that a single blood test often can't confirm or rule out the transition. Diagnosis is usually made from
+      your symptoms and cycle history. If a test is proposed, it's fair to ask what decision the result will change.
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section>
+    <div class="s-num">Part 03</div>
+    <h2>Questions that get you a real answer</h2>
+    <p class="s-intro">
+      Pick the four or five that matter most to you and write them at the top of your notes. Appointments are
+      short — the questions you ask first are the ones that get answered.
+    </p>
+    <ul class="check">
+      <li><span class="box"></span><span><span class="item-main">"Based on my symptoms and cycle history, do you think I'm in perimenopause?"</span>
+        <span class="item-sub">Gets you a position instead of a deferral.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"What else could be causing this?"</span>
+        <span class="item-sub">Thyroid, anemia, sleep apnea and depression overlap heavily. Ask what's been ruled out.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"What are all my options for this symptom — hormonal and non-hormonal?"</span>
+        <span class="item-sub">Asks for the full menu rather than the first thing that comes to mind.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"Given my personal and family history, am I a candidate for hormone therapy?"</span>
+        <span class="item-sub">If the answer is no, ask specifically which part of your history rules it out.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"What are the risks and benefits for someone with my history, specifically?"</span>
+        <span class="item-sub">General statistics are a starting point, not an answer about you.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"If we try this, when should I expect to feel a difference — and what if I don't?"</span>
+        <span class="item-sub">Sets a timeline and a follow-up, so a non-working plan doesn't quietly become permanent.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"Do any of my supplements interact with what you're suggesting?"</span>
+        <span class="item-sub">This is exactly why you brought the full list.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"What should I be doing now to protect my bones and heart?"</span>
+        <span class="item-sub">Moves the visit from symptom relief to the next thirty years.</span></span></li>
+      <li><span class="box"></span><span><span class="item-main">"If this isn't your area, who do you recommend I see?"</span>
+        <span class="item-sub">A fair question, and often the most productive one in the room.</span></span></li>
+    </ul>
+  </section>
+
+  <div class="rule"></div>
+
+  <section>
+    <div class="s-num">Part 04</div>
+    <h2>Don't wait for an appointment if</h2>
+    <p class="s-intro">
+      Some symptoms overlap with perimenopause but need to be looked at sooner rather than at your next routine visit.
+    </p>
+    <div class="warn">
+      <h3>Contact a clinician promptly about any of these</h3>
+      <ul>
+        <li>Bleeding after you have gone 12 months with no period</li>
+        <li>Periods so heavy you soak through protection hourly, or that last beyond seven days</li>
+        <li>Bleeding between periods, or after sex</li>
+        <li>Chest pain, severe shortness of breath, or fainting</li>
+        <li>A new severe headache, or one unlike any you've had before</li>
+        <li>Calf pain or swelling on one side</li>
+        <li>Thoughts of harming yourself, or a mood change that frightens you</li>
+      </ul>
+    </div>
+    <div class="note">
+      This list is not exhaustive. Anything that feels sharply wrong to you is worth a call, whether or not it
+      appears here.
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section>
+    <div class="s-num">Part 05</div>
+    <h2>Bring with you</h2>
+    <ul class="check">
+      <li><span class="box"></span><span class="item-main">This checklist, filled in</span></li>
+      <li><span class="box"></span><span class="item-main">Your two weeks of symptom tracking</span></li>
+      <li><span class="box"></span><span class="item-main">Any bloodwork from the last 12 months</span></li>
+      <li><span class="box"></span><span class="item-main">Your full medication and supplement list, with doses</span></li>
+      <li><span class="box"></span><span class="item-main">Family history of heart disease, osteoporosis, or breast cancer</span></li>
+      <li><span class="box"></span><span class="item-main">Your top priority, written at the top of the page</span></li>
+    </ul>
+  </section>
+
+  <div class="foot">
+    <p>
+      <strong>This checklist is educational and is not medical advice.</strong> OLONERA does not provide medical
+      care, diagnosis, or prescriptions, and nothing here is a substitute for professional medical advice.
+      Always seek the guidance of your physician or another qualified healthcare provider with questions about a
+      medical condition. Never disregard professional medical advice, or delay seeking it, because of something
+      you have read here.
+    </p>
+    <p style="margin-top:12px">© 2026 Olonera Inc. · <a href="mailto:info@olonera.com">info@olonera.com</a></p>
+    <a href="index.html" class="back">← Back to olonera.com</a>
+  </div>
+
+</div>
+</body>
+</html>
